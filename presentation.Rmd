@@ -32,18 +32,47 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
   \item The Neiman (1995) model
   \item Idea agents in a diachronic population network
   \begin{itemize}
-    \item Population graph landscape
-    \begin{itemize}
-      \item Generating Populations
-      \item Generating Populations
-    \end{itemize}
-    \item Idea expansion and conflict
+    \item Population generation
+    \item Relations generation
+    \item Idea expansion
   \end{itemize}
-  \item  Model comparison
+  \item Application example
 \end{enumerate}
 
-# Test
+# The Neiman (1995) model
 
-## Test
+## Style transmission
 
-- Test
+Time series
+
+# Idea agents in a diachronic population network
+
+## Overview
+
+## Population generation: Algorithm
+
+## Population generation: Code sample I
+
+## Population generation: Result
+
+Population development plot matrix
+
+## Relations generation: Algorithm
+
+## Relations generation: Code sample II
+
+## Relations generation: Result
+
+Population graph Fruchterman-Reingold
+
+## Idea expansion: Algorithm
+
+## Idea expansion: Code sample III
+
+## Idea expansion: Result
+
+Time series
+
+# Application example
+
+## Cultural distance
