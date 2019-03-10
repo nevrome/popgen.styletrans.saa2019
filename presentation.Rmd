@@ -1,0 +1,43 @@
+---
+title: "A Population Graph based Style Transmission model"
+date: "12/04/2019"
+fontsize: 9pt
+output:
+  beamer_presentation:
+    includes: 
+      in_header: preamble.tex
+    keep_tex: true
+fig_caption: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, echo = FALSE}
+# https://stackoverflow.com/questions/25646333/code-chunk-font-size-in-rmarkdown-with-knitr-and-latex
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+```
+
+## TOC
+
+\textblockcolour{mDarkTeal}
+
+\huge
+
+- Test
+
+- Test
+
+- Test
+
+- Test
+
+# Test
+
+## Test
+
+- Test

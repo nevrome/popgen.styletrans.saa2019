@@ -1,0 +1,138 @@
+%%
+%% This is file `beamerouterthemecustommetropolis.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% beamerouterthemecustommetropolis.dtx  (with options: `package')
+%% ---------------------------------------------------------------------------
+%% Copyright 2015 Matthias Vogelgesang and the LaTeX community. A full list of
+%% contributors can be found at
+%% 
+%%     https://github.com/matze/mtheme/graphs/contributors
+%% 
+%% and the original template was based on the HSRM theme by Benjamin Weiss.
+%% 
+%% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+%% International License (https://creativecommons.org/licenses/by-sa/4.0/).
+%% ---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerouterthemecustommetropolis}[2017/01/23 Metropolis outer theme]
+\RequirePackage{etoolbox}
+\RequirePackage{calc}
+\RequirePackage{pgfopts}
+\pgfkeys{
+  /custommetropolis/outer/numbering/.cd,
+    .is choice,
+    none/.code=\setbeamertemplate{frame numbering}[none],
+    counter/.code=\setbeamertemplate{frame numbering}[counter],
+    fraction/.code=\setbeamertemplate{frame numbering}[fraction],
+}
+\pgfkeys{
+  /custommetropolis/outer/progressbar/.cd,
+    .is choice,
+    none/.code={%
+      \setbeamertemplate{headline}[plain]
+      \setbeamertemplate{frametitle}[plain]
+      \setbeamertemplate{footline}[plain]
+    },
+    head/.code={\pgfkeys{/custommetropolis/outer/progressbar=none}
+      \addtobeamertemplate{headline}{}{%
+        \usebeamertemplate*{progress bar in head/foot}
+      }
+    },
+    frametitle/.code={\pgfkeys{/custommetropolis/outer/progressbar=none}
+      \addtobeamertemplate{frametitle}{}{%
+        \usebeamertemplate*{progress bar in head/foot}
+      }
+    },
+    foot/.code={\pgfkeys{/custommetropolis/outer/progressbar=none}
+      \addtobeamertemplate{footline}{}{%
+        \usebeamertemplate*{progress bar in head/foot}%
+      }
+    },
+}
+\newcommand{\custommetropolis@outer@setdefaults}{
+  \pgfkeys{/custommetropolis/outer/.cd,
+    numbering=counter,
+    progressbar=none,
+  }
+}
+\setbeamertemplate{navigation symbols}{}
+\defbeamertemplate{frame footer}{none}{}
+\defbeamertemplate{frame footer}{custom}[1]{ #1 }
+\defbeamertemplate{frame numbering}{none}{}
+\defbeamertemplate{frame numbering}{counter}{\insertframenumber}
+\defbeamertemplate{frame numbering}{fraction}{
+  \insertframenumber/\inserttotalframenumber
+}
+\defbeamertemplate{headline}{plain}{}
+\defbeamertemplate{footline}{plain}{%
+  \pgfsetfillopacity{0}\begin{beamercolorbox}[wd=\textwidth, sep=1.5ex]{footline}%
+    \usebeamerfont{page number in head/foot}%
+    \usebeamertemplate*{frame footer}
+    \hfill%
+    \pgfsetfillopacity{1}
+    \usebeamertemplate*{frame numbering}
+  \end{beamercolorbox}%
+}
+\newlength{\custommetropolis@frametitle@padding}
+\setlength{\custommetropolis@frametitle@padding}{2.2ex}
+\newcommand{\custommetropolis@frametitlestrut@start}{
+  \rule{0pt}{\custommetropolis@frametitle@padding +%
+    \totalheightof{%
+      \ifcsdef{custommetropolis@frametitleformat}{\custommetropolis@frametitleformat X}{X}%
+    }%
+  }%
+}
+\newcommand{\custommetropolis@frametitlestrut@end}{
+  \rule[-\custommetropolis@frametitle@padding]{0pt}{\custommetropolis@frametitle@padding}
+}
+\defbeamertemplate{frametitle}{plain}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[%
+      wd=\paperwidth,%
+      sep=0pt,%
+      leftskip=\custommetropolis@frametitle@padding,%
+      rightskip=\custommetropolis@frametitle@padding,%
+    ]{frametitle}%
+  \custommetropolis@frametitlestrut@start%
+  \insertframetitle%
+  \nolinebreak%
+  \custommetropolis@frametitlestrut@end%
+  \end{beamercolorbox}%
+}
+\setbeamertemplate{frametitle continuation}{%
+  \usebeamerfont{frametitle}
+  \romannumeral \insertcontinuationcount
+}
+\newlength{\custommetropolis@progressinheadfoot}
+\newlength{\custommetropolis@progressinheadfoot@linewidth}
+\setlength{\custommetropolis@progressinheadfoot@linewidth}{0.4pt}
+\setbeamertemplate{progress bar in head/foot}{
+  \nointerlineskip
+  \setlength{\custommetropolis@progressinheadfoot}{%
+    \paperwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}%
+  }%
+  \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
+    \tikzexternaldisable%
+    \begin{tikzpicture}
+      \fill[bg] (0,0) rectangle (\paperwidth, \custommetropolis@progressinheadfoot@linewidth);
+      \fill[fg] (0,0) rectangle (\custommetropolis@progressinheadfoot, \custommetropolis@progressinheadfoot@linewidth);
+    \end{tikzpicture}%
+    \tikzexternalenable%
+  \end{beamercolorbox}
+}
+\AtBeginDocument{%
+  \apptocmd{\appendix}{%
+    \pgfkeys{%
+      /custommetropolis/outer/.cd,
+      numbering=none,
+      progressbar=none}
+    }{}{}
+}
+\custommetropolis@outer@setdefaults
+\ProcessPgfPackageOptions{/custommetropolis/outer}
+\endinput
+%%
+%% End of file `beamerouterthemecustommetropolis.sty'.

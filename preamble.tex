@@ -1,0 +1,30 @@
+\usepackage{graphicx}
+\titlegraphic{\begin{picture}(0,0)\put(305,-50){\makebox(0,0)[rt]{\includegraphics[width=8cm]{example-image-a}}}\put(200,-230){\tiny \textcopyright \ Niels Bach - http://nielsbach.blogspot.com}\end{picture}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\makeatletter
+  \def\beamer@calltheme#1#2#3{%
+    \def\beamer@themelist{#2}
+    \@for\beamer@themename:=\beamer@themelist\do
+    {\usepackage[{#1}]{\beamer@themelocation/#3\beamer@themename}}}
+
+  \def\usefolder#1{
+    \def\beamer@themelocation{#1}
+  }
+  \def\beamer@themelocation{}
+
+\usefolder{metropolis_theme}
+\usetheme{custommetropolis}
+\metroset{sectionpage=progressbar}
+
+\usepackage{subfig}
+\usepackage[justification=centering]{caption}
+\usepackage{textcomp}
+\usepackage{changepage}
+\usepackage[absolute,overlay]{textpos}
+%\usepackage[texcoord,grid,gridunit=pt,gridcolor=red!10,subgridcolor=green!10]{eso-pic}
+
+\definecolor{niceorange}{HTML}{D65D00}
