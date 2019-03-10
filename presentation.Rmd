@@ -26,15 +26,21 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 \textblockcolour{mDarkTeal}
 
-\huge
+\LARGE
 
-- Test
-
-- Test
-
-- Test
-
-- Test
+\begin{enumerate}
+  \item The Neiman (1995) model
+  \item Idea agents in a diachronic population network
+  \begin{itemize}
+    \item Population graph landscape
+    \begin{itemize}
+      \item Generating Populations
+      \item Generating Populations
+    \end{itemize}
+    \item Idea expansion and conflict
+  \end{itemize}
+  \item  Model comparison
+\end{enumerate}
 
 # Test
 
