@@ -53,9 +53,29 @@ Time series
 
 ## Population generation: Code sample I
 
+```{r, eval=FALSE}
+time <- 1:200
+unit_names <- factor(c("group_1", "group_2", "group_3", "group_4"))
+unit_size_functions <- list(
+  "group_1" = function(t) {20 + 0.4 * t}, 
+  "group_2" = function(t) {20 + (0.04 * t)^2},
+  "group_3" = function(t) {50}, 
+  "group_4" = function(t) {20 + 15 * log(t)}
+)
+age_distribution_function <- function(x) {
+  1 / (1 + 0.0004 * 0.7^(-7 * log(x)))
+}
+age_range <- 1:90
+
+popgenerator::init_population_settings(
+  time, unit_names, unit_size_functions, 
+  age_distribution_function, age_range
+) %>% popgenerator::generate_population() -> population
+```
+
 ## Population generation: Result
 
-Population development plot matrix
+![](figures/code_sample_I_population_generation.jpg)
 
 ## Relations generation: Algorithm
 
