@@ -14,6 +14,8 @@ settings <- popgenerator::init_population_settings(
 
 population <- popgenerator::generate_population(settings)
 
+save(population, file = "tmp_data/population.RData")
+
 #### transform population to time series ####
 pop_ts <- aoristAAR::aorist(population, "birth_time", "death_time", "unit")
 theory_pop_ts <- do.call(rbind, lapply(

@@ -81,7 +81,26 @@ popgenerator::init_population_settings(
 
 ## Relations generation: Code sample II
 
+```{r, eval=FALSE}
+amount_friends <- 10
+distance_matrix_equal <- matrix(1, 4, 4) %>% `diag<-`(0)
+cross_unit_proportion_child_of <- 0.002
+cross_unit_proportion_friend <- 0.01
+weight_child_of <- 50
+weight_friend <- 10
+
+settings <- popgenerator::init_relations_settings(
+  population, amount_friends, distance_matrix_equal, 
+  cross_unit_proportion_child_of, cross_unit_proportion_friend,
+  weight_child_of, weight_friend
+) 
+
+relations <- popgenerator::generate_relations(settings)
+```
+
 ## Relations generation: Result
+
+![](figures/code_sample_II_relations_generation.jpg)
 
 Population graph Fruchterman-Reingold
 
