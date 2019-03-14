@@ -43,3 +43,6 @@ README.html
 
 # logfiles
 *.log
+
+# temporary data
+tmp_data/*.RData
