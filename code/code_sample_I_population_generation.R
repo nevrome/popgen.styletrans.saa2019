@@ -44,7 +44,7 @@ p <- ggplot() +
   facet_wrap(~unit) +
   geom_vline(
     xintercept = c(1, 200),
-    color = "darkgreen"
+    color = "darkgrey"
   ) +
   scale_x_continuous(
     breaks = c(1, 50, 100, 150, 200),

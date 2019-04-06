@@ -55,14 +55,53 @@ idea_development <- population %>%
   ) %>%
   dplyr::ungroup()
 
-#### plot development ####
+#### plot ####
 library(ggplot2)
-idea_development %>%
+p <- idea_development %>%
   ggplot() +
-  geom_area(aes(x = date, y = freq, fill = idea, group = idea)) +
-  geom_line(aes(x = date, y = freq, group = idea), position = "stack") +
+  geom_area(aes(x = date, y = freq, fill = idea, group = idea), alpha = 0.6) +
+  geom_line(
+    data = idea_development %>% dplyr::filter(idea == "idea_2"), 
+    mapping = aes(x = date, y = freq, group = idea)
+  ) +
+  geom_vline(
+    xintercept = c(1, 200),
+    color = "darkgrey"
+  ) +
   theme_bw() +
-  facet_grid(rows = dplyr::vars(unit)) +
-  xlab(expression(paste("t"))) +
-  ylab("variant occurrence [%]") +
-  xlim(0, 200)
+  facet_wrap(~unit) +
+  xlab("time") +
+  ylab("variant occurrence") +
+  scale_x_continuous(
+    breaks = c(1, 50, 100, 150, 200),
+    limits = c(-40, 240)
+  ) +
+  scale_y_continuous(
+    breaks = c(0.2, 0.4, 0.6, 0.8),
+    labels = c("20%", "40%", "60%", "80%")
+  ) +
+  scale_fill_manual(
+    values = c("idea_1" = "darkgreen", "idea_2" = "red")
+  ) +
+  theme(
+    plot.background = element_rect(fill = "#FAFAFA", color = "#FAFAFA")
+  ) +
+  annotate(
+    "label", x = 150, y = 0.9, label = "idea_1", size = 2.5, color = "darkgreen"
+  ) +
+  annotate(
+    "label", x = 50, y = 0.1, label = "idea_2", size = 2.5, color = "red"
+  )  +
+  guides(
+    fill = FALSE
+  )
+
+ggsave(
+  filename = "figures/code_sample_III_idea_generation.jpg",
+  plot = p,
+  device = "jpg",
+  width = 150, 
+  height = 100, 
+  units = "mm", 
+  dpi = 300
+)

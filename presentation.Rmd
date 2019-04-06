@@ -110,7 +110,7 @@ Population graph Fruchterman-Reingold
 
 ## Idea expansion: Result
 
-Time series
+![](figures/code_sample_III_idea_generation.jpg)
 
 # Application example
 
