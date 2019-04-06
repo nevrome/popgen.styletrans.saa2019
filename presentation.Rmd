@@ -108,6 +108,28 @@ Population graph Fruchterman-Reingold
 
 ## Idea expansion: Code sample III
 
+```{r, eval=FALSE}
+system2(
+  "../gluesless/build/gluesless", 
+  args = c(
+    "-pi", graph_file, 
+    "-ii", ideas_file, 
+    "-o", output_file, "-q"
+    )
+)
+result <- readLines("tmp_data/gluesless_result.txt")
+
+idea_development <- population %>%
+  dplyr::mutate(
+    idea = ifelse(id %in% result_idea_1_nodes, "idea_1", "idea_2"),
+    from = birth_time - abs(birth_time - death_time)/2, 
+    to = death_time
+  ) %>%
+  aoristAAR::aorist(
+    split_vars = c("unit", "idea")
+  )
+```
+
 ## Idea expansion: Result
 
 ![](figures/code_sample_III_idea_generation.jpg)
