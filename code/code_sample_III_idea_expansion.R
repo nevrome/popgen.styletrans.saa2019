@@ -39,19 +39,30 @@ result <- readLines("tmp_data/gluesless_result.txt")
 idea_1_nodes <- as.integer(unlist(strsplit(result[which(result == "idea_1") + 1], split = " ")))
 idea_development <- population %>%
   dplyr::mutate(
-    idea = ifelse(id %in% idea_1_nodes, "idea_1", "idea_2")
+    idea = ifelse(id %in% idea_1_nodes, "idea_1", "idea_2"),
+    from = birth_time - abs(birth_time - death_time)/2,
+    to = death_time
+  ) %>%
+  aoristAAR::aorist(
+    split_vars = c("unit", "idea"),
+    method = "number"
   ) %>%
   dplyr::group_by(
-    death_time, unit, idea
-  ) %>%
-  dplyr::summarise(
-    n = dplyr::n()
+    date, unit
   ) %>%
   dplyr::mutate(
-    freq = n / sum(n)
+    freq = sum / sum(sum)
   ) %>%
   dplyr::ungroup()
 
 #### plot development ####
-
-plot()
+library(ggplot2)
+idea_development %>%
+  ggplot() +
+  geom_area(aes(x = date, y = freq, fill = idea, group = idea)) +
+  geom_line(aes(x = date, y = freq, group = idea), position = "stack") +
+  theme_bw() +
+  facet_grid(rows = dplyr::vars(unit)) +
+  xlab(expression(paste("t"))) +
+  ylab("variant occurrence [%]") +
+  xlim(0, 200)
