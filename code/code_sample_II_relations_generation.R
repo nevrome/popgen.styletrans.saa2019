@@ -17,16 +17,20 @@ settings <- popgenerator::init_relations_settings(
 
 relations <- popgenerator::generate_relations(settings)
 
+save(relations, file = "tmp_data/relations.RData")
+
 #### transform relations to igraph ####
-graph <- igraph::graph_from_data_frame(
+relations_graph <- igraph::graph_from_data_frame(
   relations[c("from", "to", "weight")],
   directed = FALSE,
   vertices = population[,c("id", "birth_time", "unit")]
 )
 
+save(relations_graph, file = "tmp_data/relations_graph.RData")
+
 #### plot population graph nodes ####
 library(ggraph)
-layout <- ggraph::create_layout(graph, layout = 'igraph', algorithm = 'fr', start.temp = 10)
+layout <- ggraph::create_layout(relations_graph, layout = 'igraph', algorithm = 'fr', start.temp = 10)
 p <- ggraph(layout) +
   geom_node_point(
     mapping = aes(color = birth_time, shape = unit),
