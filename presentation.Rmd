@@ -29,8 +29,8 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 \LARGE
 
 \begin{enumerate}
-  \item The Neiman (1995) model
-  \item Idea agents in a diachronic population network
+  \item Stylistic Variability
+  \item Simulating Cultural Transmission
   \begin{itemize}
     \item Population generation
     \item Relations generation
@@ -39,17 +39,49 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
   \item Applications
 \end{enumerate}
 
-# The Neiman (1995) model
+# Stylistic Variability
+
+## Cultural Traits: **Style** versus **Function**
+
+Funeral rituals are a special category of ideas: They have a relatively low interaction with the human-environment system and can be treated as **selectively neutral**. [Dunnell 1978]
+
+Cultural Evolution
+
+The main mechanisms of diffusion of neutral variants are **innovation**, **drift** and **flow**. [Neiman 1995]
+
+- **Drift:** Individual traits will dominate due to stochastic processes
+
+- **Flow:** Information transfer causes synchronization across group boundaries
 
 ## Style transmission
 
-Time series
+Funeral rituals are **behaviour/ideas/cultural traits** and spread in space and time. They exist in **social space** and their spread depends on social relationships.
 
-# Idea agents in a diachronic population network
+There are many ways to simulate the diffusion of ideas. Neiman. I wanted to include...
 
-## Overview
+# Simulating Cultural Transmission
 
+## Simulation concept: Idea agents in a diachronic population network
 
+**Idea agents**
+
+- Ideas are the **entities**/**agents**, not humans (*the meme's eye view*)
+
+- Ideas have simple behaviour: **greedy expansion**
+
+- Ideas life in a configurable, diachronic **population network**
+
+\usebeamertemplate*{title separator}
+
+**Network world**
+
+- each node represents a **social entity** (humans, households, ...)
+
+- each edge represents a **social relationship**
+
+- social entities only have relationships to partners in **temporal vicinity**
+
+- social entities have stronger relationships to partners in **social vicinity**
 
 ## Population generation: Algorithm
 
