@@ -4,7 +4,7 @@ This paper by [Clemens Schmid](https://nevrome.de/) and [Ben Marwick](http://fac
 
 ## Abstract
 
-<!-- <img align="right" src="figures/general_map.jpeg" width = 450> -->
+<img align="right" src="figures/code_sample_II_relations_generation.jpg" width = 400>
 
 The now classic Neiman (1995) is a baseline for many influential applications of Cultural Transmission to explore Stylistic Variability in archaeology. It and many of its successors represent social interaction and generational development in a deliberately simplified way to facilitate the exploration of parameters and algebraic analysis. While justified, this omits both the theoretical trajectories of information transmission elaborated by Cavalli-Sforza and Feldman (1981) as well as the insights archaeologists have gained through social network analysis.
 
