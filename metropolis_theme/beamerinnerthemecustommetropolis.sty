@@ -48,34 +48,46 @@
   }
 }
 \setbeamertemplate{title page}{
+  \vspace{-30em}
   \begin{minipage}[b][\paperheight]{\textwidth}
+
     \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
-		\vspace*{1cm}
     \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
     \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
     \usebeamertemplate*{title separator}
-		\vspace{5mm}
-    \footnotesize{\textbf{Clemens Schmid}}
-    \newline
-		\footnotesize{@nevromeCS}
-		\newline
-    \footnotesize{\textbf{clemens@nevrome.de}}
-		\newline
-		\newline
-    \footnotesize{\textbf{Ben Marwick}}
-		\newline
-		\footnotesize{@benmarwick}
-    \newline
-    \footnotesize{\textbf{bmarwick@uw.edu}}
-    \newline
-    \newline
-    \footnotesize{SAA 2019}
-    \newline
-    \footnotesize{Practical Approaches \newline to Identifying \newline Evolutionary Processes \newline in the Archaeological \newline Record}
-    \newline
-    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
-    \vfill
-    \vspace*{1mm}
+		
+		\vspace{1em}
+		
+		\begin{columns}
+      \begin{column}{0.40\textwidth}  
+        
+        \footnotesize{\textbf{Clemens Schmid}}
+        \newline
+    		\footnotesize{@nevromeCS}
+    		\newline
+        \footnotesize{\textbf{clemens@nevrome.de}}
+    		\newline
+    		\newline
+    		
+    		\scriptsize{\textbf{Ben Marwick}}
+    		\newline
+    		\scriptsize{@benmarwick}
+        \newline
+        \scriptsize{\textbf{bmarwick@uw.edu}}
+    		
+      \end{column}
+      \begin{column}{0.40\textwidth}
+        
+        \footnotesize{\textbf{SAA 2019}}
+        \newline
+        \newline
+        \footnotesize{Practical Approaches \newline to Identifying \newline Evolutionary Processes \newline in the Archaeological \newline Record}
+        \newline
+        \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
+        
+      \end{column}
+    \end{columns}
+    
   \end{minipage}
 }
 \def\maketitle{%
