@@ -134,7 +134,7 @@ popgenerator::init_population_settings(
 
 - Relations are generated imprecisely with an vector based approach for performance reasons
 
-- Relations have a `strength`, which is relevant for the idea transmission
+- Relations have a `weight`, which is relevant for the idea transmission
 
 - Cross-unit relations depend on a `unit interaction matrix` and `type based interaction probabilities`
 
@@ -170,9 +170,24 @@ relations <- popgenerator::generate_relations(settings)
 
 ![](figures/code_sample_II_relations_generation.jpg)
 
-Population graph Fruchterman-Reingold
-
 ## Idea expansion
+
+- **Ideas** start at some nodes at `t = 0` and expand blindly and greedily.
+
+- Expansion can only happen along edges. Success of conversion depends on edge `weight` and chance. 
+
+- **Nodes** occupied by **ideas** are documented and then removed for the next cycle: The network shrinks.
+
+- The simulation ends, when the **ideas** stop expanding. 
+
+\usebeamertemplate*{title separator}
+
+CLI program **gluesless**: https://github.com/nevrome/gluesless  
+(missing: gluesless-R interface)
+
+```{bash, eval=FALSE}
+gluesless -pi A.paj -ii B.txt -o C.txt
+```
 
 ## Idea expansion: Code sample III
 
