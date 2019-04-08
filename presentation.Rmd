@@ -22,26 +22,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 ```
 
-## TOC
-
-\textblockcolour{mDarkTeal}
-
-\LARGE
-
-\begin{enumerate}
-  \item Stylistic Variability
-  \item Simulating Cultural Transmission
-  \begin{itemize}
-    \item Population generation
-    \item Relations generation
-    \item Idea expansion
-  \end{itemize}
-  \item Applications
-\end{enumerate}
-
-# Stylistic Variability
-
-## Cultural Traits: **Style** versus **Function**
+## Cultural Evolution -- Cultural Transmission -- Stylistic Variability
 
 Funeral rituals are a special category of ideas: They have a relatively low interaction with the human-environment system and can be treated as **selectively neutral**. [Dunnell 1978]
 
@@ -53,13 +34,11 @@ The main mechanisms of diffusion of neutral variants are **innovation**, **drift
 
 - **Flow:** Information transfer causes synchronization across group boundaries
 
-## Style transmission
-
 Funeral rituals are **behaviour/ideas/cultural traits** and spread in space and time. They exist in **social space** and their spread depends on social relationships.
 
 There are many ways to simulate the diffusion of ideas. Neiman. I wanted to include...
 
-# Simulating Cultural Transmission
+# Population Graph based Style Transmission
 
 ## Simulation concept: Idea agents in a diachronic population network
 
