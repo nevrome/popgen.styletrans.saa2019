@@ -221,4 +221,15 @@ idea_development <- population %>%
 
 ## Understanding processes of cultural transmission
 
-
+\begin{columns}
+  \begin{column}{0.57\textwidth}
+    \begin{figure}
+      \includegraphics{figures/cultrans_bronzeageburials_map_graves.jpeg}
+    \end{figure}
+  \end{column}
+  \begin{column}{0.27\textwidth}
+    \begin{figure}
+      \includegraphics{figures/cultrans_bronzeageburials_development_burial_type.jpeg}
+    \end{figure}
+  \end{column}
+\end{columns}
