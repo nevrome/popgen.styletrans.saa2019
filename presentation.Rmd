@@ -198,7 +198,21 @@ idea_development <- population %>%
 
 # Application
 
-## Understanding processes of cultural transmission
+## Comparing real world proxies with simulation results
+
+- Archaeology documents many processes of fashion change and idea propagation
+
+- Cultural Evolution theory provides a framework to abstract from the individual artefact category
+
+- Social Simulation allows to formulate expectations concerning the relation of trait distribution and the structure and behaviour of a population
+
+- Real world data can be discussed in the light of these results
+
+\usebeamertemplate*{title separator}
+
+Schmid, Evaluating Cultural Transmission in Bronze Age burial rites of Central, Northern and North-western Europe using radiocarbon data, Adaptive Behavior, **forthcoming**
+
+## Processes of Cultural Transmission
 
 \begin{columns}
   \begin{column}{0.57\textwidth}
@@ -212,3 +226,4 @@ idea_development <- population %>%
     \end{figure}
   \end{column}
 \end{columns}
+
