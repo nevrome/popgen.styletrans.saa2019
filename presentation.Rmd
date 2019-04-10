@@ -1,6 +1,5 @@
 ---
 title: "A Population Graph based Style Transmission model"
-date: "12/04/2019"
 fontsize: 9pt
 output:
   beamer_presentation:
@@ -190,7 +189,7 @@ idea_development <- population %>%
 
 ![](figures/code_sample_III_idea_generation.jpg)
 
-# What you should do now
+# What YOU could do NOW
 
 ## Comparing real world proxies with simulation results
 
@@ -198,13 +197,11 @@ idea_development <- population %>%
 
 - Compare these time series and calculate measures of **cultural distance**
 
-- Compare multiple measures of cultural and **spatial distance** to identify correlation
+- Compare multiple measures of cultural and **spatial distance** to identify **correlation**
 
 \usebeamertemplate*{title separator}
 
-- Explore models of idea propagation to understand the relation of trait distribution and the structure and behaviour of populations
-
-- **Real world data can be discussed in the light of simulated results**
+- Explore **models of idea propagation** to understand the relation of trait distribution and the **structure and behaviour of populations**
 
 ## Processes of Cultural Transmission: Bronze Age burial rites
 
@@ -223,3 +220,6 @@ idea_development <- population %>%
   \end{column}
 \end{columns}
 
+##
+
+\titlepage
