@@ -190,31 +190,33 @@ idea_development <- population %>%
 
 ![](figures/code_sample_III_idea_generation.jpg)
 
-# Application
+# What you should do now
 
 ## Comparing real world proxies with simulation results
 
-- **Archaeology** documents many processes of fashion change and idea propagation
+- Identify processes of fashion change and idea propagation and try to describe them with quantitative (!) **time series**
 
-- **Cultural Evolution** theory provides a framework to abstract from the individual artefact category
+- Compare these time series and calculate measures of **cultural distance**
 
-- **Social Simulation** allows to formulate expectations concerning the relation of trait distribution and the structure and behaviour of populations
-
-- **Real world data can be discussed in the light of simulated results**
+- Compare multiple measures of cultural and **spatial distance** to identify correlation
 
 \usebeamertemplate*{title separator}
 
-Schmid, Evaluating Cultural Transmission in Bronze Age burial rites of Central, Northern and North-western Europe using radiocarbon data, Adaptive Behavior, *forthcoming*
+- Explore models of idea propagation to understand the relation of trait distribution and the structure and behaviour of populations
+
+- **Real world data can be discussed in the light of simulated results**
 
 ## Processes of Cultural Transmission: Bronze Age burial rites
 
 \begin{columns}
-  \begin{column}{0.57\textwidth}
+  \begin{column}{0.40\textwidth}
     \begin{figure}
       \includegraphics{figures/cultrans_bronzeageburials_map_graves.jpeg}
     \end{figure}
+    \vspace{0.5cm}
+    \footnotesize{Schmid, Evaluating Cultural Transmission in Bronze Age burial rites of Central, Northern and North-western Europe using radiocarbon data, Adaptive Behavior, \textit{forthcoming}}
   \end{column}
-  \begin{column}{0.27\textwidth}
+  \begin{column}{0.26\textwidth}
     \begin{figure}
       \includegraphics{figures/cultrans_bronzeageburials_development_burial_type.jpeg}
     \end{figure}
