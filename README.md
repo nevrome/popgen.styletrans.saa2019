@@ -1,6 +1,6 @@
 # A Population Graph based Style Transmission model
 
-This paper by [Clemens Schmid](https://nevrome.de/) and [Ben Marwick](http://faculty.washington.edu/bmarwick/) was prepared for the [SAA2019](https://documents.saa.org/container/docs/default-source/doc-annualmeeting/final-program/2019-final-program/final-program-2019-with-covers.pdf?sfvrsn=d7632e2b_2) conference in Albuquerque, NM, USA. The relevant session [*Practical Approaches to Identifying Evolutionary Processes in the Archaeological Record*](https://ccs18.bsc.es/) by [Ben Marwick](http://faculty.washington.edu/bmarwick/) took place on 12/04/2019.
+This paper was prepared for the [SAA2019](https://documents.saa.org/container/docs/default-source/doc-annualmeeting/final-program/2019-final-program/final-program-2019-with-covers.pdf?sfvrsn=d7632e2b_2) conference in Albuquerque, NM, USA. The relevant session [*Practical Approaches to Identifying Evolutionary Processes in the Archaeological Record*](https://ccs18.bsc.es/) by [Ben Marwick](http://faculty.washington.edu/bmarwick/) took place on 12/04/2019.
 
 ## Abstract
 
