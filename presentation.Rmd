@@ -29,9 +29,13 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 
 - Behaviour/Ideas/Cultural traits spread in space and time. They exist in **social space** and their spread depends on **social relations**
 
-- The spread of functional and stylistic traits is conceptually different. Stochastic processes determine the fate of **selectively neutral** traits: **Stylistic Variability**
+- The spread of functional and stylistic traits is conceptually different. The fate of stylistic (**selectively neutral**) traits is determined by stochastic processes: **Stylistic Variability**
 
-# One modelling aproach: Population Graph based Style Transmission
+\usebeamertemplate*{title separator}
+
+- There are many different ways to model or simulate the spread of **neutral traits**.
+
+# Yet another modelling approach: Population Graph based Style Transmission
 
 ## Simulation concept: Idea agents in a diachronic population network
 
@@ -106,7 +110,7 @@ popgenerator::init_population_settings(
 
 - Relations are generated imprecisely with an vector based approach for performance reasons
 
-- Relations have a `weight`, which is relevant for the idea transmission
+- Relations have a `weight`, which will be relevant for the idea transmission
 
 - Cross-unit relations depend on a `unit interaction matrix` and `type based interaction probabilities`
 
@@ -129,13 +133,11 @@ cross_unit_proportion_friend <- 0.01
 weight_child_of <- 50
 weight_friend <- 10
 
-settings <- popgenerator::init_relations_settings(
+popgenerator::init_relations_settings(
   population, amount_friends, distance_matrix_equal, 
   cross_unit_proportion_child_of, cross_unit_proportion_friend,
   weight_child_of, weight_friend
-) 
-
-relations <- popgenerator::generate_relations(settings)
+) %>% popgenerator::generate_relations() -> relations
 ```
 
 ## Relations generation: Result
@@ -144,13 +146,15 @@ relations <- popgenerator::generate_relations(settings)
 
 ## Idea expansion
 
-- **Ideas** start at some nodes at `t = 0` and expand blindly and greedily
+- **Ideas** start at some nodes at `t = 0` and expand **greedily** in **cycles**
 
-- Expansion can only happen along edges. Success of conversion depends on edge `weight` and chance
+- Expansion can only happen along edges
 
-- Nodes occupied by ideas are documented and then removed for the next cycle: The network shrinks
+- Success of conversion depends on **edge `weight`** and **chance**
 
-- The simulation ends, when the ideas stop expanding. 
+- Nodes occupied by ideas are documented and then removed for the next cycle: The network **shrinks**
+
+- The simulation **ends**, when the ideas stop expanding
 
 \usebeamertemplate*{title separator}
 
@@ -191,7 +195,7 @@ idea_development <- population %>%
 
 # What YOU could do NOW
 
-## Comparing real world proxies with simulation results
+## Comparing real world time series with simulation results
 
 - Identify processes of fashion change and idea propagation and try to describe them with quantitative (!) **time series**
 
@@ -201,7 +205,7 @@ idea_development <- population %>%
 
 \usebeamertemplate*{title separator}
 
-- Explore **models of idea propagation** to understand the relation of trait distribution and the **structure and behaviour of populations**
+- Explore **models of idea transmission** to understand the **relation of trait distribution and the structure and behaviour of populations**
 
 ## Processes of Cultural Transmission: Bronze Age burial rites
 
